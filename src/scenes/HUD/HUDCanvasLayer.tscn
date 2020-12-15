@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/HUD/HUD.tscn" type="PackedScene" id=1]
+
+[node name="HUDCanvasLayer" type="CanvasLayer"]
+
+[node name="HUD" parent="." instance=ExtResource( 1 )]
+margin_right = 100.0

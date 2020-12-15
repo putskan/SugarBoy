@@ -1,0 +1,187 @@
+[gd_scene load_steps=95 format=2]
+
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_10.png" type="Texture" id=1]
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_09.png" type="Texture" id=2]
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_12.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_11.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_04.png" type="Texture" id=5]
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_05.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_07.png" type="Texture" id=7]
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_08.png" type="Texture" id=8]
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_01.png" type="Texture" id=9]
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_03.png" type="Texture" id=10]
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_06.png" type="Texture" id=11]
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_00.png" type="Texture" id=12]
+[ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_02.png" type="Texture" id=13]
+[ext_resource path="res://Player.gd" type="Script" id=14]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_06.png" type="Texture" id=15]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_07.png" type="Texture" id=16]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_03.png" type="Texture" id=17]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_04.png" type="Texture" id=18]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_02.png" type="Texture" id=19]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_01.png" type="Texture" id=20]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_05.png" type="Texture" id=21]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_00.png" type="Texture" id=22]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_09.png" type="Texture" id=23]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_15.png" type="Texture" id=24]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_16.png" type="Texture" id=25]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_18.png" type="Texture" id=26]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_14.png" type="Texture" id=27]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_10.png" type="Texture" id=28]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_19.png" type="Texture" id=29]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_12.png" type="Texture" id=30]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_11.png" type="Texture" id=31]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_13.png" type="Texture" id=32]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_17.png" type="Texture" id=33]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_20.png" type="Texture" id=34]
+[ext_resource path="res://assets/player/Transparent PNG/01_idle/skeleton-01_idle_08.png" type="Texture" id=35]
+[ext_resource path="res://assets/player/Transparent PNG/05_fall/skeleton-05_fall_10.png" type="Texture" id=36]
+[ext_resource path="res://assets/player/Transparent PNG/05_fall/skeleton-05_fall_09.png" type="Texture" id=37]
+[ext_resource path="res://assets/player/Transparent PNG/04_jump/skeleton-04_jump_08.png" type="Texture" id=38]
+[ext_resource path="res://assets/player/Transparent PNG/05_fall/skeleton-05_fall_01.png" type="Texture" id=39]
+[ext_resource path="res://assets/player/Transparent PNG/04_jump/skeleton-04_jump_03.png" type="Texture" id=40]
+[ext_resource path="res://assets/player/Transparent PNG/04_jump/skeleton-04_jump_02.png" type="Texture" id=41]
+[ext_resource path="res://assets/player/Transparent PNG/04_jump/skeleton-04_jump_04.png" type="Texture" id=42]
+[ext_resource path="res://assets/player/Transparent PNG/04_jump/skeleton-04_jump_09.png" type="Texture" id=43]
+[ext_resource path="res://assets/player/Transparent PNG/04_jump/skeleton-04_jump_05.png" type="Texture" id=44]
+[ext_resource path="res://assets/player/Transparent PNG/05_fall/skeleton-05_fall_03.png" type="Texture" id=45]
+[ext_resource path="res://assets/player/Transparent PNG/05_fall/skeleton-05_fall_02.png" type="Texture" id=46]
+[ext_resource path="res://assets/player/Transparent PNG/05_fall/skeleton-05_fall_04.png" type="Texture" id=47]
+[ext_resource path="res://assets/player/Transparent PNG/05_fall/skeleton-05_fall_05.png" type="Texture" id=48]
+[ext_resource path="res://assets/player/Transparent PNG/05_fall/skeleton-05_fall_06.png" type="Texture" id=49]
+[ext_resource path="res://assets/player/Transparent PNG/05_fall/skeleton-05_fall_07.png" type="Texture" id=50]
+[ext_resource path="res://assets/player/Transparent PNG/04_jump/skeleton-04_jump_01.png" type="Texture" id=51]
+[ext_resource path="res://assets/player/Transparent PNG/05_fall/skeleton-05_fall_08.png" type="Texture" id=52]
+[ext_resource path="res://assets/player/Transparent PNG/04_jump/skeleton-04_jump_00.png" type="Texture" id=53]
+[ext_resource path="res://assets/player/Transparent PNG/04_jump/skeleton-04_jump_07.png" type="Texture" id=54]
+[ext_resource path="res://assets/player/Transparent PNG/04_jump/skeleton-04_jump_06.png" type="Texture" id=55]
+[ext_resource path="res://assets/player/Transparent PNG/04_jump/skeleton-04_jump_10.png" type="Texture" id=56]
+[ext_resource path="res://assets/player/Transparent PNG/05_fall/skeleton-05_fall_00.png" type="Texture" id=57]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_07.png" type="Texture" id=58]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_04.png" type="Texture" id=59]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_05.png" type="Texture" id=60]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_06.png" type="Texture" id=61]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_03.png" type="Texture" id=62]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_00.png" type="Texture" id=63]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_02.png" type="Texture" id=64]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_01.png" type="Texture" id=65]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_15.png" type="Texture" id=66]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_14.png" type="Texture" id=67]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_15.png" type="Texture" id=68]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_09.png" type="Texture" id=69]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_12.png" type="Texture" id=70]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_11.png" type="Texture" id=71]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_08.png" type="Texture" id=72]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_10.png" type="Texture" id=73]
+[ext_resource path="res://assets/player/Transparent PNG/09_attack/skeleton-09_attack_13.png" type="Texture" id=74]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_07.png" type="Texture" id=75]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_08.png" type="Texture" id=76]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_12.png" type="Texture" id=77]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_10.png" type="Texture" id=78]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_13.png" type="Texture" id=79]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_09.png" type="Texture" id=80]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_11.png" type="Texture" id=81]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_14.png" type="Texture" id=82]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_06.png" type="Texture" id=83]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_03.png" type="Texture" id=84]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_01.png" type="Texture" id=85]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_02.png" type="Texture" id=86]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_05.png" type="Texture" id=87]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_04.png" type="Texture" id=88]
+[ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_00.png" type="Texture" id=89]
+[ext_resource path="res://assets/tiles/bg.png" type="Texture" id=90]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 35 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 33 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "idle",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 53 ), ExtResource( 51 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 44 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 56 ) ],
+"loop": true,
+"name": "jump",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 57 ), ExtResource( 39 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 37 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "fall",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 89 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 84 ), ExtResource( 88 ), ExtResource( 87 ), ExtResource( 83 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 80 ), ExtResource( 78 ), ExtResource( 81 ), ExtResource( 77 ), ExtResource( 79 ), ExtResource( 82 ), ExtResource( 66 ) ],
+"loop": true,
+"name": "attack2",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 63 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 72 ), ExtResource( 69 ), ExtResource( 73 ), ExtResource( 71 ), ExtResource( 70 ), ExtResource( 74 ), ExtResource( 67 ), ExtResource( 68 ) ],
+"loop": true,
+"name": "attack",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "run",
+"speed": 30.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3.62645, 1.79827 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 15.742, 15.9711 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 17.0524, 17.5256 )
+
+[node name="Player" type="KinematicBody2D"]
+z_index = 1
+script = ExtResource( 14 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.128975, -0.319011 )
+scale = Vector2( 0.0462775, 0.0462775 )
+frames = SubResource( 1 )
+animation = "idle"
+frame = 12
+playing = true
+
+[node name="MeleeAttackArea" type="Area2D" parent="AnimatedSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/MeleeAttackArea"]
+position = Vector2( 291.96, 0 )
+scale = Vector2( 80, 90 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.104745, -0.00565708 )
+shape = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+current = true
+smoothing_enabled = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.1, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1140, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 465.046, 285.612 )
+scale = Vector2( 3.56636, 2.91944 )
+z_index = -100
+texture = ExtResource( 90 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="HitArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+position = Vector2( 0, 1 )
+shape = SubResource( 4 )
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="area_entered" from="HitArea" to="." method="_on_HitArea_area_entered"]
