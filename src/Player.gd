@@ -16,6 +16,8 @@ var is_attacking = false
 var attack_animations = ['attack', 'attack2']
 var is_dead = false
 var health = 100
+var is_invulnerable = false
+var areas_currently_colliding = []
 signal health_changed(new_health)
 
 # runs 60 times a second
@@ -52,7 +54,7 @@ func handle_attack():
 		
 
 func handle_animation_type(motion):
-	# handle animation type (e.g., run, idle, jump)
+	# handle most animation types (e.g., run, idle, jump)
 	if is_attacking:
 		$AnimatedSprite.play(attack_animations[0])
 		return
@@ -116,8 +118,6 @@ func _on_AnimatedSprite_animation_finished():
 		# change next animation
 		attack_animations.push_front(attack_animations.pop_back())
 		
-	
-		
 
 
 func handle_damage(damage_cause):
@@ -130,9 +130,27 @@ func handle_damage(damage_cause):
 	emit_signal("health_changed", health)
 	if health == 0:
 		die_p1()
-	return true
+		return
+	take_damage_blinking_animation()
 	
 	
+func take_damage_blinking_animation():
+	# Flicker 4 times, while being invulnerable to enemies
+	is_invulnerable = true
+	for i in 7:
+		modulate.a = 0.5
+		for j in 5:
+			yield(get_tree(), "idle_frame")
+		modulate.a = 1.0
+		for j in 5:
+			yield(get_tree(), "idle_frame")
+	is_invulnerable = false
+	
+	# deal damage again if player haven't stopped colliding with the enemy
+	if len(areas_currently_colliding) > 0:
+		handle_damage(areas_currently_colliding[0].name)
+
+
 func bounce_back(collisionBody):
 	# bounce back from enemies and such
 	motion.y *= -1
@@ -152,7 +170,18 @@ func die_p2():
 	# post animation
 
 func _on_HitArea_area_entered(area):
-	handle_damage(area.name)
-	# add bounce from hit effect - needs correction
+	areas_currently_colliding.append(area)
+	if not is_invulnerable:
+		handle_damage(area.name)
+
+
+func _on_HitArea_area_exited(area):
+	areas_currently_colliding.erase(area)
+
+
+	# add hit animation
+	# involnerability timer
 	# next up - sounds & level creation & VCS
+	# add menu & end
+	# design levels
 

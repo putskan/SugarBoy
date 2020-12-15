@@ -177,8 +177,8 @@ script = ExtResource( 14 )
 position = Vector2( 0.128975, -0.319011 )
 scale = Vector2( 0.0462775, 0.0462775 )
 frames = SubResource( 1 )
-animation = "ko"
-frame = 15
+animation = "idle"
+frame = 11
 playing = true
 
 [node name="MeleeAttackArea" type="Area2D" parent="AnimatedSprite"]
@@ -221,3 +221,4 @@ position = Vector2( 0, 1 )
 shape = SubResource( 4 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="area_entered" from="HitArea" to="." method="_on_HitArea_area_entered"]
+[connection signal="area_exited" from="HitArea" to="." method="_on_HitArea_area_exited"]
