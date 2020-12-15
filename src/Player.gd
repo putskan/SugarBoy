@@ -5,6 +5,7 @@ const MOVE_MAX_SPEED = 500
 const MOVE_ACCELERATION = 25
 const GRAVITY = 19
 const UP = Vector2(0, -1)
+const death_animation = "ko"
 const cause_to_damage = {
 	'SpikesArea': 999,
 	'VoyageArea': 50,
@@ -13,6 +14,7 @@ const cause_to_damage = {
 var motion = Vector2()
 var is_attacking = false
 var attack_animations = ['attack', 'attack2']
+var is_dead = false
 var health = 100
 signal health_changed(new_health)
 
@@ -103,11 +105,19 @@ func get_world_lowest_point(world_node):
 
 
 func _on_AnimatedSprite_animation_finished():
+	if is_dead:
+		# die only after death animation finished
+		die_p2()
+		return
+		
 	if $AnimatedSprite.animation in attack_animations:
 		is_attacking = false
 		$AnimatedSprite/MeleeAttackArea/CollisionShape2D.disabled = true
 		# change next animation
 		attack_animations.push_front(attack_animations.pop_back())
+		
+	
+		
 
 
 func handle_damage(damage_cause):
@@ -119,7 +129,7 @@ func handle_damage(damage_cause):
 	health = max(health - dmg, 0)
 	emit_signal("health_changed", health)
 	if health == 0:
-		die()
+		die_p1()
 	return true
 	
 	
@@ -129,13 +139,20 @@ func bounce_back(collisionBody):
 	motion.x *= -1
 	motion = move_and_slide(motion, UP)
 	
-func die():
+
+func die_p1():
+	set_physics_process(false)
+	is_dead = true
+	# caught in _on_AnimatedSprite_animation_finished
+	$AnimatedSprite.play(death_animation)
+			
+
+func die_p2():
 	get_tree().reload_current_scene()
+	# post animation
 
 func _on_HitArea_area_entered(area):
 	handle_damage(area.name)
 	# add bounce from hit effect - needs correction
-	# add death effect before respawn
-	# change is_dead function
 	# next up - sounds & level creation & VCS
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=2]
+[gd_scene load_steps=126 format=2]
 
 [ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_10.png" type="Texture" id=1]
 [ext_resource path="res://assets/player/Transparent PNG/03_run/skeleton-03_run_09.png" type="Texture" id=2]
@@ -90,6 +90,37 @@
 [ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_04.png" type="Texture" id=88]
 [ext_resource path="res://assets/player/Transparent PNG/10_attack_2/skeleton-10_attack_2_00.png" type="Texture" id=89]
 [ext_resource path="res://assets/tiles/bg.png" type="Texture" id=90]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_21.png" type="Texture" id=91]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_24.png" type="Texture" id=92]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_25.png" type="Texture" id=93]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_26.png" type="Texture" id=94]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_30.png" type="Texture" id=95]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_11.png" type="Texture" id=96]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_14.png" type="Texture" id=97]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_05.png" type="Texture" id=98]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_01.png" type="Texture" id=99]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_22.png" type="Texture" id=100]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_15.png" type="Texture" id=101]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_10.png" type="Texture" id=102]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_18.png" type="Texture" id=103]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_12.png" type="Texture" id=104]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_09.png" type="Texture" id=105]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_02.png" type="Texture" id=106]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_13.png" type="Texture" id=107]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_03.png" type="Texture" id=108]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_06.png" type="Texture" id=109]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_20.png" type="Texture" id=110]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_27.png" type="Texture" id=111]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_28.png" type="Texture" id=112]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_29.png" type="Texture" id=113]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_07.png" type="Texture" id=114]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_04.png" type="Texture" id=115]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_08.png" type="Texture" id=116]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_16.png" type="Texture" id=117]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_17.png" type="Texture" id=118]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_19.png" type="Texture" id=119]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_00.png" type="Texture" id=120]
+[ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_23.png" type="Texture" id=121]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -98,14 +129,19 @@ animations = [ {
 "name": "idle",
 "speed": 30.0
 }, {
+"frames": [ ExtResource( 120 ), ExtResource( 99 ), ExtResource( 106 ), ExtResource( 108 ), ExtResource( 115 ), ExtResource( 98 ), ExtResource( 109 ), ExtResource( 114 ), ExtResource( 116 ), ExtResource( 105 ), ExtResource( 102 ), ExtResource( 96 ), ExtResource( 104 ), ExtResource( 107 ), ExtResource( 97 ), ExtResource( 101 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 103 ), ExtResource( 119 ), ExtResource( 110 ), ExtResource( 91 ), ExtResource( 100 ), ExtResource( 121 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 95 ) ],
+"loop": true,
+"name": "ko",
+"speed": 25.0
+}, {
 "frames": [ ExtResource( 53 ), ExtResource( 51 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 44 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 56 ) ],
 "loop": true,
 "name": "jump",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 57 ), ExtResource( 39 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 37 ), ExtResource( 36 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "fall",
+"name": "run",
 "speed": 30.0
 }, {
 "frames": [ ExtResource( 89 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 84 ), ExtResource( 88 ), ExtResource( 87 ), ExtResource( 83 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 80 ), ExtResource( 78 ), ExtResource( 81 ), ExtResource( 77 ), ExtResource( 79 ), ExtResource( 82 ), ExtResource( 66 ) ],
@@ -118,9 +154,9 @@ animations = [ {
 "name": "attack",
 "speed": 30.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 57 ), ExtResource( 39 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 37 ), ExtResource( 36 ) ],
 "loop": true,
-"name": "run",
+"name": "fall",
 "speed": 30.0
 } ]
 
@@ -141,8 +177,8 @@ script = ExtResource( 14 )
 position = Vector2( 0.128975, -0.319011 )
 scale = Vector2( 0.0462775, 0.0462775 )
 frames = SubResource( 1 )
-animation = "idle"
-frame = 12
+animation = "ko"
+frame = 15
 playing = true
 
 [node name="MeleeAttackArea" type="Area2D" parent="AnimatedSprite"]
