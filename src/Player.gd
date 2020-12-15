@@ -18,10 +18,33 @@ var is_dead = false
 var health = 100
 var is_invulnerable = false
 var areas_currently_colliding = []
+var death_prerequisites =  {
+	"finished_death_animation": false,
+	"finished_death_audio": false
+}
+
 signal health_changed(new_health)
+signal player_jump
+signal hit_enemy
+signal get_hit
+signal die
+
+func _ready():
+	var sound_effects = get_tree().get_root().find_node("SoundEffects", true, false)
+	var complete_trophy = get_tree().get_root().find_node("CompleteTrophy", true, false)
+	sound_effects.connect("death_sound_finished", self, "death_sound_finished")
+	complete_trophy.connect("player_finishing_level", self, "hide_player")
 
 # runs 60 times a second
 func _physics_process(delta):
+	if is_dead:
+		for value in death_prerequisites.values():
+			if value != true:
+				return
+				
+		die_p2()
+		return
+		
 	handle_motion()
 	handle_attack()
 	handle_fall_out_of_world()	
@@ -44,7 +67,12 @@ func handle_motion():
 		motion.x = 0
 
 	if is_on_floor() and Input.is_action_just_pressed("ui_up"):
-		motion.y = JUMP_HEIGHT
+		jump()
+
+
+func jump():
+	motion.y = JUMP_HEIGHT
+	emit_signal("player_jump")
 
 
 func handle_attack():
@@ -109,7 +137,9 @@ func get_world_lowest_point(world_node):
 func _on_AnimatedSprite_animation_finished():
 	if is_dead:
 		# die only after death animation finished
-		die_p2()
+		$AnimatedSprite.play("death_frame")
+		$AnimatedSprite.stop()
+		death_prerequisites["finished_death_animation"] = true
 		return
 		
 	if $AnimatedSprite.animation in attack_animations:
@@ -117,13 +147,13 @@ func _on_AnimatedSprite_animation_finished():
 		$AnimatedSprite/MeleeAttackArea/CollisionShape2D.disabled = true
 		# change next animation
 		attack_animations.push_front(attack_animations.pop_back())
-		
 
 
 func handle_damage(damage_cause):
 	if not damage_cause in cause_to_damage.keys():
 		# not hit by enemy
 		return false
+	emit_signal("get_hit")
 	bounce_back(damage_cause)
 	var dmg = cause_to_damage[damage_cause]
 	health = max(health - dmg, 0)
@@ -159,15 +189,16 @@ func bounce_back(collisionBody):
 	
 
 func die_p1():
-	set_physics_process(false)
 	is_dead = true
+	is_invulnerable = true
+	emit_signal("die")
 	# caught in _on_AnimatedSprite_animation_finished
 	$AnimatedSprite.play(death_animation)
-			
+
 
 func die_p2():
 	get_tree().reload_current_scene()
-	# post animation
+
 
 func _on_HitArea_area_entered(area):
 	areas_currently_colliding.append(area)
@@ -177,11 +208,23 @@ func _on_HitArea_area_entered(area):
 
 func _on_HitArea_area_exited(area):
 	areas_currently_colliding.erase(area)
-
-
-	# add hit animation
-	# involnerability timer
-	# next up - sounds & level creation & VCS
+	# next up - level creation & VCS
 	# add menu & end
 	# design levels
 
+
+func _on_MeleeAttackArea_area_entered(area):
+	# Raise signal if attacking an enemy
+	if area.get_parent().get_node("Enemy"):
+		emit_signal("hit_enemy")
+
+
+func death_sound_finished():
+	death_prerequisites["finished_death_audio"] = true
+
+func hide_player():
+	set_modulate(Color(1, 1, 1, 0))
+	set_physics_process(false)
+	is_invulnerable = true
+	
+	

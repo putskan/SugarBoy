@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Spikes.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://CompleteTrophy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Chocolate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/HUD/HUDCanvasLayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SoundEffects.tscn" type="PackedScene" id=8]
 
 [node name="World" type="Node2D"]
 
@@ -61,6 +62,8 @@ position = Vector2( 170.04, 83.524 )
 position = Vector2( 104.768, -46.0347 )
 
 [node name="HUDCanvasLayer" parent="." instance=ExtResource( 7 )]
+
+[node name="SoundEffects" parent="." instance=ExtResource( 8 )]
 
 [editable path="HUDCanvasLayer"]
 

@@ -12,6 +12,8 @@ var jumps_time_counter = 0
 var hp = 3
 var is_dead = false
 
+signal hit_enemy
+
 func _physics_process(delta):
 	motion.y += GRAVITY
 	if not is_dead:
@@ -46,6 +48,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_area_entered(area):
 	if area.name == 'MeleeAttackArea':
+		emit_signal("hit_enemy")
 		hp -= 1
 		$AnimatedSprite.modulate = Color(6,1,1)
 		$AnimatedSprite.modulate = Color(0.4, 0.2, 0.2, 0.85)

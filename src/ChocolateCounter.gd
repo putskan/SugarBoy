@@ -3,6 +3,7 @@ extends Node2D
 var chocolates_to_collect = 0
 signal remaining_chocolates_changed(chocolates_to_collect)
 signal all_chocolates_collected
+signal chocolate_collected
 
 
 func _ready():
@@ -25,4 +26,5 @@ func chocolate_collected():
 	if chocolates_to_collect == 0:
 		emit_signal("all_chocolates_collected")
 	emit_signal('remaining_chocolates_changed', chocolates_to_collect)
-	
+	# for sound
+	emit_signal("chocolate_collected")

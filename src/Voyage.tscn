@@ -36,6 +36,8 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Enemy" type="Node2D" parent="."]
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.242836, 0.23358 )
 scale = Vector2( 0.0609253, 0.0609253 )
