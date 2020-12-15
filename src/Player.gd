@@ -39,7 +39,7 @@ func _ready():
 func _physics_process(delta):
 	if is_dead:
 		for value in death_prerequisites.values():
-			if value != true:
+			if not value:
 				return
 				
 		die_p2()
@@ -208,9 +208,6 @@ func _on_HitArea_area_entered(area):
 
 func _on_HitArea_area_exited(area):
 	areas_currently_colliding.erase(area)
-	# next up - level creation & VCS
-	# add menu & end
-	# design levels
 
 
 func _on_MeleeAttackArea_area_entered(area):
@@ -222,9 +219,13 @@ func _on_MeleeAttackArea_area_entered(area):
 func death_sound_finished():
 	death_prerequisites["finished_death_audio"] = true
 
+
 func hide_player():
 	set_modulate(Color(1, 1, 1, 0))
 	set_physics_process(false)
 	is_invulnerable = true
 	
 	
+	# next up - level design
+	# add menu & end
+	#fix voyage on head bug
