@@ -122,27 +122,11 @@
 [ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_00.png" type="Texture" id=120]
 [ext_resource path="res://assets/player/Transparent PNG/06_ko/skeleton-06_KO_23.png" type="Texture" id=121]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 22 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 35 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 33 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 34 ) ],
-"loop": true,
-"name": "idle",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 53 ), ExtResource( 51 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 44 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 56 ) ],
-"loop": true,
-"name": "jump",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 57 ), ExtResource( 39 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 37 ), ExtResource( 36 ) ],
 "loop": true,
 "name": "fall",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 89 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 84 ), ExtResource( 88 ), ExtResource( 87 ), ExtResource( 83 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 80 ), ExtResource( 78 ), ExtResource( 81 ), ExtResource( 77 ), ExtResource( 79 ), ExtResource( 82 ), ExtResource( 66 ) ],
-"loop": true,
-"name": "attack2",
 "speed": 30.0
 }, {
 "frames": [ ExtResource( 63 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 62 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 72 ), ExtResource( 69 ), ExtResource( 73 ), ExtResource( 71 ), ExtResource( 70 ), ExtResource( 74 ), ExtResource( 67 ), ExtResource( 68 ) ],
@@ -155,15 +139,30 @@ animations = [ {
 "name": "ko",
 "speed": 25.0
 }, {
+"frames": [ ExtResource( 95 ) ],
+"loop": true,
+"name": "death_frame",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 89 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 84 ), ExtResource( 88 ), ExtResource( 87 ), ExtResource( 83 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 80 ), ExtResource( 78 ), ExtResource( 81 ), ExtResource( 77 ), ExtResource( 79 ), ExtResource( 82 ), ExtResource( 66 ) ],
+"loop": true,
+"name": "attack2",
+"speed": 30.0
+}, {
 "frames": [ ExtResource( 12 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "run",
 "speed": 30.0
 }, {
-"frames": [ ExtResource( 95 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 35 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 33 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 34 ) ],
 "loop": true,
-"name": "death_frame",
-"speed": 5.0
+"name": "idle",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 53 ), ExtResource( 51 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 44 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 56 ) ],
+"loop": true,
+"name": "jump",
+"speed": 25.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -173,7 +172,7 @@ extents = Vector2( 3.62645, 1.79827 )
 extents = Vector2( 15.742, 15.9711 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 17.0524, 17.5256 )
+extents = Vector2( 16.2122, 17.5256 )
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 1

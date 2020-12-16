@@ -1,24 +1,114 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/tiles/grass_tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://src/trophy/CompleteTrophy.tscn" type="PackedScene" id=3]
-
-
-
-
-
+[ext_resource path="res://src/obstacales/Spikes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/enemies/Voyage.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/tiles/grass_tileset.tres" type="TileSet" id=4]
+[ext_resource path="res://src/trophy/CompleteTrophy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/collectables/Chocolate.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/ui/hud/HUDCanvasLayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/audio/SoundEffects.tscn" type="PackedScene" id=8]
 
 [node name="World2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63, 136.014 )
+
+[node name="CompleteTrophy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 61.9178, 283.722 )
+next_world = "res://src/worlds/World1.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 2 )
+position = Vector2( -161, 19 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 131071, 11, 0 )
+tile_data = PoolIntArray( -1703933, 0, 0, -1703932, 9, 0, -1703931, 8, 0, -1638397, 0, 0, -1638396, 9, 0, -1638395, 8, 0, -1572861, 0, 0, -1572860, 9, 0, -1572859, 8, 0, -1507325, 0, 0, -1507324, 9, 0, -1507323, 8, 0, -1441789, 0, 0, -1441788, 9, 0, -1441787, 8, 0, -1376253, 0, 0, -1376252, 9, 0, -1376251, 8, 0, -1310717, 0, 0, -1310716, 9, 0, -1310715, 8, 0, -1245181, 0, 0, -1245180, 9, 0, -1245179, 8, 0, -1179645, 0, 0, -1179644, 9, 0, -1179643, 8, 0, -1114109, 0, 0, -1114108, 9, 0, -1114107, 8, 0, -1048573, 0, 0, -1048572, 9, 0, -1048571, 8, 0, -983037, 0, 0, -983036, 9, 0, -983035, 8, 0, -983026, 0, 0, -983025, 9, 0, -983024, 8, 0, -917501, 0, 0, -917500, 9, 0, -917499, 8, 0, -851965, 0, 0, -851964, 9, 0, -851963, 8, 0, -786429, 0, 0, -786428, 9, 0, -786427, 8, 0, -720893, 0, 0, -720892, 9, 0, -720891, 8, 0, -720876, 0, 0, -720875, 9, 0, -720874, 8, 0, -655357, 0, 0, -655356, 9, 0, -655355, 8, 0, -589821, 0, 0, -589820, 9, 0, -589819, 8, 0, -524285, 0, 0, -524284, 9, 0, -524283, 8, 0, -524263, 0, 0, -524262, 11, 0, -524260, 6, 0, -524258, 6, 0, -524256, 6, 0, -524254, 6, 0, -524252, 8, 0, -458749, 0, 0, -458748, 9, 0, -458747, 8, 0, -458718, 0, 0, -458717, 9, 0, -458716, 8, 0, -393213, 0, 0, -393212, 9, 0, -393211, 8, 0, -393182, 0, 0, -393181, 9, 0, -393180, 8, 0, -327645, 0, 0, -327644, 9, 0, -327643, 8, 0, -262109, 0, 0, -262108, 9, 0, -262107, 8, 0, -196573, 0, 0, -196572, 9, 0, -196571, 8, 0, -131036, 0, 0, -131035, 9, 0, -131034, 8, 0, -65500, 0, 0, -65499, 9, 0, -65498, 8, 0, 36, 0, 0, 37, 9, 0, 38, 8, 0, 65573, 0, 0, 65574, 9, 0, 65575, 8, 0, 131109, 0, 0, 131110, 9, 0, 131111, 8, 0, 196645, 0, 0, 196646, 9, 0, 196647, 8, 0, 262182, 0, 0, 262183, 9, 0, 262184, 8, 0, 327718, 0, 0, 327719, 9, 0, 327720, 8, 0, 393254, 0, 0, 393255, 9, 0, 393256, 8, 0, 458791, 0, 0, 458792, 9, 0, 458793, 8, 0, 524327, 0, 0, 524328, 9, 0, 524329, 8, 0, 589863, 0, 0, 589864, 9, 0, 589865, 8, 0, 655400, 0, 0, 655401, 9, 0, 655402, 8, 0, 720936, 0, 0, 720937, 9, 0, 720938, 8, 0, 786472, 0, 0, 786473, 9, 0, 786474, 8, 0, 852009, 0, 0, 852010, 11, 0, 852012, 8, 0, 917545, 0, 0, 917546, 11, 0, 917548, 8, 0, 983081, 0, 0, 983082, 11, 0, 983084, 8, 0, 1114096, 0, 0, 1114097, 9, 0, 1114098, 8, 0, 1048617, 0, 0, 1048618, 11, 0, 1048619, 6, 0, 1048621, 6, 0, 1048623, 6, 0, 1048625, 6, 0, 1048627, 6, 0, 1048629, 8, 0, 1179632, 0, 0, 1179633, 9, 0, 1179634, 8, 0, 1245168, 0, 0, 1245169, 9, 0, 1245170, 8, 0, 1310704, 0, 0, 1310705, 9, 0, 1310706, 8, 0, 1376240, 0, 0, 1376241, 9, 0, 1376242, 8, 0, 1310777, 7, 0, 1441776, 0, 0, 1441777, 9, 0, 1441778, 8, 0, 1376341, 3, 0, 1376342, 3, 0, 1376343, 3, 0, 1507312, 0, 0, 1507313, 9, 0, 1507314, 8, 0, 1572848, 0, 0, 1572849, 9, 0, 1572850, 8, 0, 1638384, 0, 0, 1638385, 9, 0, 1638386, 8, 0, 1572917, 7, 0, 1703920, 0, 0, 1703921, 9, 0, 1703922, 8, 0, 1769456, 0, 0, 1769457, 9, 0, 1769458, 8, 0, 1834992, 0, 0, 1834993, 9, 0, 1834994, 8, 0, 1900528, 0, 0, 1900529, 9, 0, 1900530, 8, 0, 1835065, 7, 0, 1966064, 0, 0, 1966065, 9, 0, 1966066, 8, 0, 2031600, 0, 0, 2031601, 9, 0, 2031602, 8, 0, 2097136, 0, 0, 2097137, 9, 0, 2097138, 8, 0, 2162672, 0, 0, 2162673, 9, 0, 2162674, 8, 0, 2097205, 7, 0, 2228208, 0, 0, 2228209, 9, 0, 2228210, 8, 0, 2293744, 0, 0, 2293745, 9, 0, 2293746, 8, 0, 2359280, 0, 0, 2359281, 9, 0, 2359282, 8, 0, 2424816, 0, 0, 2424817, 9, 0, 2424818, 8, 0, 2359345, 7, 0, 2490352, 0, 0, 2490353, 9, 0, 2490354, 8, 0, 2555888, 0, 0, 2555889, 9, 0, 2555890, 8, 0, 2621424, 0, 0, 2621425, 9, 0, 2621426, 8, 0, 2686960, 0, 0, 2686961, 9, 0, 2686962, 8, 0, 2621485, 7, 0, 2752496, 0, 0, 2752497, 9, 0, 2752498, 8, 0, 2818032, 0, 0, 2818033, 9, 0, 2818034, 8, 0, 2883568, 0, 0, 2883569, 9, 0, 2883570, 8, 0, 2949104, 0, 0, 2949105, 9, 0, 2949106, 8, 0, 2883625, 7, 0, 3014640, 0, 0, 3014641, 9, 0, 3014642, 8, 0, 3080176, 0, 0, 3080177, 9, 0, 3080178, 8, 0, 3145712, 0, 0, 3145713, 9, 0, 3145714, 8, 0, 3211248, 0, 0, 3211249, 9, 0, 3211250, 8, 0, 3145765, 7, 0, 3276784, 0, 0, 3276785, 9, 0, 3276786, 8, 0, 3342320, 0, 0, 3342321, 9, 0, 3342322, 8, 0, 3407856, 0, 0, 3407857, 9, 0, 3407858, 8, 0, 3473392, 0, 0, 3473393, 11, 0, 3473395, 6, 0, 3473397, 6, 0, 3473399, 6, 0, 3473401, 6, 0, 3473403, 6, 0, 3473405, 6, 0, 3473407, 6, 0, 3407873, 6, 0, 3407875, 6, 0, 3407877, 6, 0, 3407879, 6, 0, 3407881, 6, 0, 3407883, 6, 0, 3407885, 6, 0, 3407887, 6, 0, 3407889, 6, 0, 3407891, 6, 0, 3407893, 6, 0, 3407895, 6, 0, 3407897, 6, 0, 3407899, 6, 0, 3407901, 6, 0, 3407903, 6, 0, 3407905, 8, 0 )
 
-[node name="CompleteTrophy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3, -103 )
-next_world = "res://scenes/World.tscn"
+[node name="spikes_container" type="Node" parent="."]
+
+[node name="Spikes" parent="spikes_container" instance=ExtResource( 2 )]
+position = Vector2( 655.646, -247.202 )
+
+[node name="Spikes2" parent="spikes_container" instance=ExtResource( 2 )]
+position = Vector2( 680.646, -247.202 )
+
+[node name="voyage_container" type="Node" parent="."]
+
+[node name="Voyage" parent="voyage_container" instance=ExtResource( 3 )]
+position = Vector2( 1261.27, 414.058 )
+
+[node name="AnimatedSprite" parent="voyage_container/Voyage" index="1"]
+flip_h = true
+
+[node name="Voyage2" parent="voyage_container" instance=ExtResource( 3 )]
+position = Vector2( 1134.76, 125.407 )
+
+[node name="AnimatedSprite" parent="voyage_container/Voyage2" index="1"]
+flip_h = true
+
+[node name="Voyage3" parent="voyage_container" instance=ExtResource( 3 )]
+position = Vector2( 719.6, -255.897 )
+
+[node name="AnimatedSprite" parent="voyage_container/Voyage3" index="1"]
+flip_h = true
+
+[node name="ChocolateContainer" type="Node2D" parent="."]
+position = Vector2( 170.04, 83.524 )
+
+[node name="Chocolate" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 240.024, 1461.41 )
+
+[node name="Chocolate2" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 459.024, 1461.41 )
+
+[node name="Chocolate3" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 996.684, 1316.62 )
+
+[node name="Chocolate4" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 1252.6, 1062.94 )
+
+[node name="Chocolate5" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 1510.77, 553.342 )
+
+[node name="Chocolate6" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 996.684, 134.663 )
+
+[node name="Chocolate7" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( -118.573, -418.997 )
+
+[node name="Chocolate11" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( -118.573, -459.997 )
+
+[node name="Chocolate8" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( -119.044, -376.057 )
+
+[node name="Chocolate9" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( -119.044, -331.158 )
+
+[node name="Chocolate10" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( -118.921, -286.872 )
+
+[node name="Chocolate12" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( -118.921, -241.872 )
+
+[node name="HUDCanvasLayer" parent="." instance=ExtResource( 7 )]
+
+[node name="HUD" parent="HUDCanvasLayer" index="0"]
+visible = false
+margin_left = 14.1421
+margin_top = -1.41422
+margin_right = 114.142
+margin_bottom = -1.41418
+
+[node name="SoundEffects" parent="." instance=ExtResource( 8 )]
+
+[editable path="voyage_container/Voyage"]
+
+[editable path="voyage_container/Voyage2"]
+
+[editable path="voyage_container/Voyage3"]
+
+[editable path="HUDCanvasLayer"]
+
+[editable path="HUDCanvasLayer/HUD"]

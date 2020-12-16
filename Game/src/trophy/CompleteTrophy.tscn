@@ -4,16 +4,11 @@
 [ext_resource path="res://src/trophy/CompleteTrophy.gd" type="Script" id=2]
 [ext_resource path="res://src/trophy/ChocolateCounter.gd" type="Script" id=3]
 
-
-
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2.12712e+06, 1.95334e+06 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 20.6624, 21.6491 )
+extents = Vector2( 23.2889, 21.6491 )
 
 [node name="CompleteTrophy" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -24,6 +19,7 @@ scale = Vector2( 0.0836938, 0.0836938 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2, 0 )
 scale = Vector2( 1e-05, 1e-05 )
 shape = SubResource( 1 )
 
