@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/enemies/voyage/Idle/frame-1.png" type="Texture" id=1]
+[ext_resource path="res://assets/enemies/voyage/Idle/frame-2.png" type="Texture" id=2]
+[ext_resource path="res://src/enemies/Voyage.gd" type="Script" id=3]
+[ext_resource path="res://assets/enemies/voyage/got hit/frame-1.png" type="Texture" id=4]
+[ext_resource path="res://assets/enemies/voyage/got hit/frame-2.png" type="Texture" id=5]
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "dizzy",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "idle_n_jump",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 9.00398, 3.92798 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 14.2112, 16.3766 )
+
+[node name="Voyage" type="KinematicBody2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.242836, 0.23358 )
+scale = Vector2( 0.0609253, 0.0609253 )
+frames = SubResource( 1 )
+animation = "idle_n_jump"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -0.547112, 16.9548 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="VoyageArea" type="Area2D" parent="."]
+visible = false
+position = Vector2( -0.445435, 1.33635 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VoyageArea"]
+visible = false
+position = Vector2( -0.149811, 3.85921 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="area_entered" from="VoyageArea" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="VoyageArea" to="." method="_on_Area2D_area_exited"]
+[connection signal="body_entered" from="VoyageArea" to="." method="_on_Area2D_body_entered"]

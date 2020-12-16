@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/audio/SoundEffects.gd" type="Script" id=1]
+[ext_resource path="res://assets/music/sound_effects/crunch_eating.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/music/theme_song_1.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/music/sound_effects/jump.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/music/sound_effects/death.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/music/sound_effects/punch.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/music/sound_effects/finish_level.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/music/sound_effects/get_hit.wav" type="AudioStream" id=8]
+
+
+[node name="SoundEffects" type="Node"]
+script = ExtResource( 1 )
+
+[node name="bg_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -13.0
+autoplay = true
+
+[node name="eat_cookie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Unhandled" type="Node2D" parent="."]
+
+[node name="hit_enemy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.097
+
+[node name="death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="get_hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = 4.039
+
+[node name="finish_level" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = 17.165
