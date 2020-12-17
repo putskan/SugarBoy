@@ -1,0 +1,134 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/obstacales/Spikes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/enemies/Voyage.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/tiles/grass_tileset.tres" type="TileSet" id=4]
+[ext_resource path="res://src/trophy/CompleteTrophy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/collectables/Chocolate.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/ui/hud/HUDCanvasLayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/audio/SoundEffects.tscn" type="PackedScene" id=8]
+
+[node name="World1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 50.5519, 26.6247 )
+
+[node name="CompleteTrophy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 4557.1, 794.205 )
+next_world = "res://src/worlds/World2.tscn"
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -161, 19 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -655275, 0, 0, -655274, 9, 0, -655273, 8, 0, -458672, 0, 0, -458671, 9, 0, -458670, 8, 0, -262069, 0, 0, -262068, 9, 0, -262067, 8, 0, -65466, 0, 0, -65465, 9, 0, -65464, 8, 0, 131137, 0, 0, 131138, 9, 0, 131139, 8, 0, 262149, 0, 0, 262150, 11, 0, 262152, 6, 0, 262154, 6, 0, 262156, 6, 0, 262158, 6, 0, 262160, 6, 0, 262162, 6, 0, 262164, 8, 0, 327701, 0, 0, 327702, 11, 0, 327704, 6, 0, 327706, 6, 0, 327708, 6, 0, 327710, 6, 0, 327712, 6, 0, 327714, 6, 0, 327716, 6, 0, 327718, 6, 0, 327720, 6, 0, 327722, 6, 0, 327724, 6, 0, 327726, 6, 0, 327728, 6, 0, 327730, 6, 0, 327732, 6, 0, 327734, 6, 0, 327736, 6, 0, 327738, 6, 0, 327740, 6, 0, 327742, 8, 0, 1114204, 0, 0, 1114205, 11, 0, 1114207, 6, 0, 1114209, 6, 0, 1114211, 6, 0, 1114213, 6, 0, 1114215, 6, 0, 1114217, 6, 0, 1114219, 6, 0, 1114221, 6, 0, 1114223, 6, 0, 1114225, 6, 0, 1114227, 6, 0, 1114229, 6, 0, 1114231, 6, 0, 1114233, 6, 0, 1114235, 6, 0, 1114237, 6, 0, 1114239, 6, 0, 1114241, 8, 0, 1179776, 0, 0, 1179777, 9, 0, 1179778, 8, 0, 1245313, 0, 0, 1245314, 9, 0, 1245315, 8, 0, 1310850, 0, 0, 1310851, 9, 0, 1310852, 8, 0, 1376341, 3, 0, 1376342, 3, 0, 1376343, 3, 0, 1376387, 0, 0, 1376388, 9, 0, 1376389, 8, 0, 1441924, 0, 0, 1441925, 9, 0, 1441926, 8, 0, 1507461, 0, 0, 1507462, 9, 0, 1507463, 8, 0, 1507480, 7, 0, 1572998, 0, 0, 1572999, 9, 0, 1573000, 8, 0, 1638535, 0, 0, 1638536, 9, 0, 1638537, 8, 0, 1704072, 0, 0, 1704073, 9, 0, 1704074, 8, 0, 1769611, 0, 0, 1769612, 11, 0, 1769614, 6, 0, 1769616, 8, 0 )
+
+[node name="spikes_container" type="Node" parent="."]
+
+[node name="Spikes2" parent="spikes_container" instance=ExtResource( 2 )]
+position = Vector2( 1009.92, 168.904 )
+
+[node name="Spikes3" parent="spikes_container" instance=ExtResource( 2 )]
+position = Vector2( 438.663, 136.756 )
+
+[node name="Spikes4" parent="spikes_container" instance=ExtResource( 2 )]
+position = Vector2( 461.663, 136.756 )
+
+[node name="Spikes5" parent="spikes_container" instance=ExtResource( 2 )]
+position = Vector2( 485.663, 136.756 )
+
+[node name="Spikes6" parent="spikes_container" instance=ExtResource( 2 )]
+position = Vector2( 551.669, 169.421 )
+
+[node name="Spikes7" parent="spikes_container" instance=ExtResource( 2 )]
+position = Vector2( 526.669, 169.421 )
+
+[node name="Spikes8" parent="spikes_container" instance=ExtResource( 2 )]
+position = Vector2( 576.669, 169.421 )
+
+[node name="voyage_container" type="Node" parent="."]
+
+[node name="Voyage" parent="voyage_container" instance=ExtResource( 3 )]
+position = Vector2( 409.185, 117.357 )
+
+[node name="Voyage2" parent="voyage_container" instance=ExtResource( 3 )]
+position = Vector2( 2642.2, -325.624 )
+
+[node name="Voyage3" parent="voyage_container" instance=ExtResource( 3 )]
+position = Vector2( 1312.52, 158.524 )
+
+[node name="Voyage7" parent="voyage_container" instance=ExtResource( 3 )]
+position = Vector2( 1820.06, 161.346 )
+
+[node name="Voyage4" parent="voyage_container" instance=ExtResource( 3 )]
+position = Vector2( 1085.29, 159.7 )
+
+[node name="Voyage5" parent="voyage_container" instance=ExtResource( 3 )]
+position = Vector2( 736.834, 159.448 )
+
+[node name="Voyage6" parent="voyage_container" instance=ExtResource( 3 )]
+position = Vector2( 772.834, 159.448 )
+
+[node name="ChocolateContainer" type="Node2D" parent="."]
+position = Vector2( 170.04, 83.524 )
+
+[node name="Chocolate" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 583.421, -6.92902 )
+
+[node name="Chocolate14" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 877.222, 72.267 )
+
+[node name="Chocolate15" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 1141.03, 73.3264 )
+
+[node name="Chocolate2" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 1856.65, -98.0284 )
+
+[node name="Chocolate3" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 2012, -201.492 )
+
+[node name="Chocolate4" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 2181.44, -290.013 )
+
+[node name="Chocolate5" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 2332.79, -377.05 )
+
+[node name="Chocolate6" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 2577.08, -476.298 )
+
+[node name="Chocolate7" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 3666.88, 460.46 )
+
+[node name="Chocolate8" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 3702.2, 460.46 )
+
+[node name="Chocolate9" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 3738.2, 460.46 )
+
+[node name="Chocolate10" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 3633.2, 460.46 )
+
+[node name="Chocolate11" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 3597.2, 460.46 )
+
+[node name="Chocolate12" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 3560.2, 460.46 )
+
+[node name="Chocolate13" parent="ChocolateContainer" instance=ExtResource( 6 )]
+position = Vector2( 4549.94, 642.935 )
+
+[node name="HUDCanvasLayer" parent="." instance=ExtResource( 7 )]
+
+[node name="HUD" parent="HUDCanvasLayer" index="0"]
+margin_left = 14.1421
+margin_top = -1.41422
+margin_right = 114.142
+margin_bottom = -1.41418
+
+[node name="SoundEffects" parent="." instance=ExtResource( 8 )]
+
+[editable path="HUDCanvasLayer"]
+
+[editable path="HUDCanvasLayer/HUD"]
