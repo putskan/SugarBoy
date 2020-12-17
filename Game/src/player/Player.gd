@@ -154,7 +154,7 @@ func handle_damage(damage_cause):
 		# not hit by enemy
 		return false
 	emit_signal("get_hit")
-	bounce_back()
+	bounce_back(damage_cause)
 	var dmg = cause_to_damage[damage_cause]
 	health = max(health - dmg, 0)
 	emit_signal("health_changed", health)
@@ -181,8 +181,8 @@ func take_damage_blinking_animation():
 		handle_damage(areas_currently_colliding[0].name)
 
 
-func bounce_back():
-	# bounce back from enemies and such
+func bounce_back(damage_cause):
+	# bounce back from enemies
 	motion.y *= -1
 	motion.x *= -1
 	motion = move_and_slide(motion, UP)
@@ -224,8 +224,3 @@ func hide_player():
 	set_modulate(Color(1, 1, 1, 0))
 	set_physics_process(false)
 	is_invulnerable = true
-	
-	
-	# next up - level design
-	# add menu & end
-	#fix voyage on head bug

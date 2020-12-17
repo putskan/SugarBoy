@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/enemies/voyage/Idle/frame-1.png" type="Texture" id=1]
 [ext_resource path="res://assets/enemies/voyage/Idle/frame-2.png" type="Texture" id=2]
 [ext_resource path="res://src/enemies/Voyage.gd" type="Script" id=3]
 [ext_resource path="res://assets/enemies/voyage/got hit/frame-1.png" type="Texture" id=4]
 [ext_resource path="res://assets/enemies/voyage/got hit/frame-2.png" type="Texture" id=5]
-
+[ext_resource path="res://src/enemies/DetectPlayerBelow.gd" type="Script" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -68,7 +68,26 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
+
+[node name="BounceOnPlayer" type="Node2D" parent="."]
+position = Vector2( -0.445435, 1.33635 )
+
+[node name="DetectPlayerBelow" type="RayCast2D" parent="BounceOnPlayer"]
+position = Vector2( 14, 0 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+script = ExtResource( 6 )
+
+[node name="DetectPlayerBelow2" type="RayCast2D" parent="BounceOnPlayer"]
+enabled = true
+cast_to = Vector2( 0, 20 )
+script = ExtResource( 6 )
+
+[node name="DetectPlayerBelow3" type="RayCast2D" parent="BounceOnPlayer"]
+position = Vector2( -13, 0 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+script = ExtResource( 6 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="area_entered" from="VoyageArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="VoyageArea" to="." method="_on_Area2D_area_exited"]
-[connection signal="body_entered" from="VoyageArea" to="." method="_on_Area2D_body_entered"]
