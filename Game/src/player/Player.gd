@@ -48,7 +48,7 @@ func _physics_process(delta):
 	handle_motion()
 	handle_attack()
 	handle_fall_out_of_world()	
-	handle_animation_flip(motion)
+	handle_animation_flip()
 	handle_animation_type(motion)
 	# apply motion to player. UP direction must be specified for physics to word ("is on floor")
 	motion = move_and_slide(motion, UP)
@@ -102,7 +102,7 @@ func handle_animation_type(motion):
 	$AnimatedSprite.play("idle")
 
 
-func handle_animation_flip(motion):
+func handle_animation_flip():
 	# handle animation vertical/horizontal flips
 	if Input.is_action_pressed("ui_right"):
 		$AnimatedSprite.flip_h = false
@@ -154,7 +154,7 @@ func handle_damage(damage_cause):
 		# not hit by enemy
 		return false
 	emit_signal("get_hit")
-	bounce_back(damage_cause)
+	bounce_back()
 	var dmg = cause_to_damage[damage_cause]
 	health = max(health - dmg, 0)
 	emit_signal("health_changed", health)
@@ -181,7 +181,7 @@ func take_damage_blinking_animation():
 		handle_damage(areas_currently_colliding[0].name)
 
 
-func bounce_back(collisionBody):
+func bounce_back():
 	# bounce back from enemies and such
 	motion.y *= -1
 	motion.x *= -1

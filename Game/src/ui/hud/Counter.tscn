@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/objects/chocolate.png" type="Texture" id=1]
-[ext_resource path="res://assets/hud/label_bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/label_bg.png" type="Texture" id=2]
 [ext_resource path="res://src/themes/default_theme.tres" type="Theme" id=3]
+
 
 
 [node name="Counter" type="NinePatchRect"]
