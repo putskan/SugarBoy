@@ -3,8 +3,5 @@
 [ext_resource path="res://src/ui/hud/Counter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/ui/hud/UIChocolateCounter.gd" type="Script" id=2]
 
-
-
-
 [node name="UIChocolateCounter" instance=ExtResource( 1 )]
 script = ExtResource( 2 )

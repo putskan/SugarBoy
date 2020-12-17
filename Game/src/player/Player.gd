@@ -162,8 +162,8 @@ func handle_damage(damage_cause):
 		die_p1()
 		return
 	take_damage_blinking_animation()
-	
-	
+
+
 func take_damage_blinking_animation():
 	# Flicker 4 times, while being invulnerable to enemies
 	is_invulnerable = true
@@ -186,7 +186,7 @@ func bounce_back():
 	motion.y *= -1
 	motion.x *= -1
 	motion = move_and_slide(motion, UP)
-	
+
 
 func die_p1():
 	is_dead = true
@@ -212,7 +212,7 @@ func _on_HitArea_area_exited(area):
 
 func _on_MeleeAttackArea_area_entered(area):
 	# Raise signal if attacking an enemy
-	if area.get_parent().get_node("Enemy"):
+	if area.get_parent().get_node_or_null("Enemy"):
 		emit_signal("hit_enemy")
 
 

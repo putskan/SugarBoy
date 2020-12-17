@@ -16,7 +16,7 @@ position = Vector2( 63, 136.014 )
 
 [node name="CompleteTrophy" parent="." instance=ExtResource( 5 )]
 position = Vector2( 61.9178, 283.722 )
-next_world = "res://src/worlds/World1.tscn"
+next_world = "res://src/ui/MainMenu.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -161, 19 )
@@ -95,7 +95,6 @@ position = Vector2( -118.921, -241.872 )
 [node name="HUDCanvasLayer" parent="." instance=ExtResource( 7 )]
 
 [node name="HUD" parent="HUDCanvasLayer" index="0"]
-visible = false
 margin_left = 14.1421
 margin_top = -1.41422
 margin_right = 114.142
